@@ -1,0 +1,9 @@
+applications:
+- disk_quota: 1024M
+  buildpack: sdk-for-nodejs
+  command: npm run start
+  path: .
+  instances: 1
+  memory: 384M
+  env:
+    ENABLE_BLUEMIX_DEV_MODE: "true"

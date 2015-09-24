@@ -1,0 +1,4 @@
+node_modules/*
+client/*
+*.sublime-workspace
+*.log

@@ -1,0 +1,16 @@
+{
+  "name": "livesync-reload",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "gulp dev"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "browser-sync": "^2.9.6",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "morgan": "^1.6.1",
+    "node-dev": "^2.7.1"
+  }
+}
