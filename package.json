@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "gulp dev"
+    "start": "gulp sync"
   },
   "dependencies": {
     "body-parser": "^1.13.3",

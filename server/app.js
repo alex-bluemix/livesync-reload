@@ -22,7 +22,8 @@ var logger     = require('morgan');
 
 // configure the express server
 var app = express();
-app.set('port', process.env.PORT || 3000);
+var port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+app.set('port', port + 5);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

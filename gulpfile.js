@@ -26,6 +26,29 @@ gulp.task('node-dev', function () {
   nodeDev('server/app.js', ['--all-deps'], []);
 });
 
+// /**
+//  * In dev mode, watch for changes in client code and Less and
+//  * rebuild bundle.js or style.css when these happen. Kick off
+//  * a server that restarts when server-side code changes. Kick
+//  * off a browserSync that injects css changes in to the page,
+//  * and reloads the page on javascript or html changes
+//  */
+// gulp.task('sync', ['node-dev'], function () {
+//   gulp.watch('./public/index.html').on('change', browserSync.reload);
+//   gulp.watch('./public/style.css', function () {
+//     gulp.src('./public/style.css').pipe(browserSync.stream());
+//   });
+
+//   // configure the browsersync to proxy
+//   // through our node server
+//   var port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+//   browserSync({
+//     proxy: 'localhost:' + (port + 5),
+//     port: port
+//   });
+// });
+
+
 /**
  * In dev mode, watch for changes in client code and Less and
  * rebuild bundle.js or style.css when these happen. Kick off
@@ -33,17 +56,15 @@ gulp.task('node-dev', function () {
  * off a browserSync that injects css changes in to the page,
  * and reloads the page on javascript or html changes
  */
-gulp.task('dev', ['node-dev'], function () {
+gulp.task('sync', function () {
   gulp.watch('./public/index.html').on('change', browserSync.reload);
   gulp.watch('./public/style.css', function () {
     gulp.src('./public/style.css').pipe(browserSync.stream());
   });
 
-  // configure the browsersync to proxy
-  // through our node server
   var port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
-  browserSync({
-    proxy: 'localhost:' + port,
-    port: port + 1
+  return browserSync.init({
+    server: './public',
+    port: port
   });
 });
