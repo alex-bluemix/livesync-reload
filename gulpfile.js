@@ -41,7 +41,7 @@ gulp.task('dev', ['node-dev'], function () {
 
   // configure the browsersync to proxy
   // through our node server
-  var port = process.env.PORT || 3000;
+  var port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
   browserSync({
     proxy: 'localhost:' + port,
     port: port + 1

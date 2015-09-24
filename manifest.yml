@@ -7,3 +7,4 @@ applications:
   memory: 384M
   env:
     ENABLE_BLUEMIX_DEV_MODE: "true"
+    PORT: 3000
