@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node --harmony_destructuring --harmony_default_parameters server/app.js"
+    "start": "node server/app.js"
   },
   "dependencies": {
     "babel-loader": "^6.2.4",
